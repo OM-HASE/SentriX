@@ -1,0 +1,41 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "SentriX Validation Result Schema",
+  "type": "object",
+  "required": [
+    "incident_id",
+    "pull_request_url",
+    "decision",
+    "confidence",
+    "validation_summary",
+    "required_next_action"
+  ],
+  "properties": {
+    "incident_id": {
+      "type": "string",
+      "pattern": "^INC-[0-9]+$"
+    },
+    "pull_request_url": {
+      "type": "string",
+      "format": "uri"
+    },
+    "decision": {
+      "type": "string",
+      "enum": ["approved", "rejected", "escalated"]
+    },
+    "confidence": {
+      "type": "string",
+      "enum": ["Low", "Medium", "High"]
+    },
+    "validation_summary": {
+      "type": "array",
+      "items": { "type": "string" },
+      "minItems": 1
+    },
+    "required_next_action": {
+      "type": "string",
+      "enum": ["merge", "refix", "human_review"]
+    }
+  },
+  "additionalProperties": false
+}

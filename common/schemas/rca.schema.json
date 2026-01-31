@@ -1,0 +1,65 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "SentriX RCA Schema",
+  "type": "object",
+  "required": [
+    "incident_id",
+    "summary",
+    "root_cause",
+    "trigger_event",
+    "impact",
+    "evidence",
+    "affected_components",
+    "severity",
+    "recommended_fix",
+    "preventive_actions",
+    "confidence"
+  ],
+  "properties": {
+    "incident_id": {
+      "type": "string",
+      "pattern": "^INC-[0-9]+$"
+    },
+    "summary": {
+      "type": "string",
+      "maxLength": 300
+    },
+    "root_cause": {
+      "type": "string"
+    },
+    "trigger_event": {
+      "type": "string"
+    },
+    "impact": {
+      "type": "string"
+    },
+    "evidence": {
+      "type": "array",
+      "items": { "type": "string" },
+      "minItems": 1
+    },
+    "affected_components": {
+      "type": "array",
+      "items": { "type": "string" },
+      "minItems": 1
+    },
+    "severity": {
+      "type": "string",
+      "enum": ["Low", "Medium", "High", "Critical"]
+    },
+    "recommended_fix": {
+      "type": "array",
+      "items": { "type": "string" },
+      "minItems": 1
+    },
+    "preventive_actions": {
+      "type": "array",
+      "items": { "type": "string" }
+    },
+    "confidence": {
+      "type": "string",
+      "enum": ["Low", "Medium", "High"]
+    }
+  },
+  "additionalProperties": false
+}

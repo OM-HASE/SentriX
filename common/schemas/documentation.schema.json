@@ -1,0 +1,35 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "SentriX Documentation Output Schema",
+  "type": "object",
+  "required": [
+    "incident_id",
+    "documentation_created",
+    "knowledge_updated",
+    "issue_status",
+    "labels_applied"
+  ],
+  "properties": {
+    "incident_id": {
+      "type": "string",
+      "pattern": "^INC-[0-9]+$"
+    },
+    "documentation_created": {
+      "type": "array",
+      "items": { "type": "string" },
+      "minItems": 1
+    },
+    "knowledge_updated": {
+      "type": "boolean"
+    },
+    "issue_status": {
+      "type": "string",
+      "enum": ["open", "closed", "escalated"]
+    },
+    "labels_applied": {
+      "type": "array",
+      "items": { "type": "string" }
+    }
+  },
+  "additionalProperties": false
+}

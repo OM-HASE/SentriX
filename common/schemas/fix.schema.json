@@ -1,0 +1,44 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "SentriX Fix Proposal Schema",
+  "type": "object",
+  "required": [
+    "incident_id",
+    "branch_name",
+    "files_modified",
+    "patch_summary",
+    "risk_level",
+    "requires_validation",
+    "pull_request_url"
+  ],
+  "properties": {
+    "incident_id": {
+      "type": "string",
+      "pattern": "^INC-[0-9]+$"
+    },
+    "branch_name": {
+      "type": "string",
+      "pattern": "^fix/INC-[0-9]+$"
+    },
+    "files_modified": {
+      "type": "array",
+      "items": { "type": "string" },
+      "minItems": 1
+    },
+    "patch_summary": {
+      "type": "string"
+    },
+    "risk_level": {
+      "type": "string",
+      "enum": ["Low", "Medium"]
+    },
+    "requires_validation": {
+      "type": "boolean"
+    },
+    "pull_request_url": {
+      "type": "string",
+      "format": "uri"
+    }
+  },
+  "additionalProperties": false
+}

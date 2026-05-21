@@ -1,0 +1,414 @@
+{
+  "active_graph": {
+    "nodes": {
+      "source_code": {
+        "type": "raw_source",
+        "metadata": {
+          "source_code": "class User:\n    def __init__(self, user_id, email):\n        self.user_id = user_id\n        self.email = email\n        self.cart = None\n\nclass Cart:\n    def __init__(self):\n        self.items = []\n        self.total = 0.0\n\n    def add_item(self, item):\n        self.items.append(item)\n        self.total += item.price\n\n    def remove_item(self, item_id):\n        self.items = [i for i in self.items if i.id != item_id]\n\nclass Product:\n    def __init__(self, product_id, name, price):\n        self.id = product_id\n        self.name = name\n        self.price = price\n",
+          "synthetic": true,
+          "file_path": "models.py",
+          "file_name": "models.py",
+          "defined_in": [
+            "cart_service.py",
+            "auth.py",
+            "app.py"
+          ]
+        }
+      },
+      "repository": {
+        "type": "repository_root",
+        "metadata": {
+          "synthetic": true,
+          "file_path": "models.py",
+          "file_name": "models.py",
+          "defined_in": [
+            "cart_service.py",
+            "auth.py",
+            "app.py"
+          ]
+        }
+      },
+      "user": {
+        "type": "inferred_variable",
+        "metadata": {
+          "variable_name": "user",
+          "inferred_type": "find_user",
+          "synthetic": true,
+          "file_path": "cart_service.py",
+          "file_name": "cart_service.py",
+          "defined_in": [
+            "auth.py"
+          ]
+        }
+      },
+      "product": {
+        "type": "inferred_variable",
+        "metadata": {
+          "variable_name": "product",
+          "inferred_type": "find_product",
+          "synthetic": true,
+          "file_path": "cart_service.py",
+          "file_name": "cart_service.py"
+        }
+      },
+      "user.cart": {
+        "type": "inferred_variable",
+        "metadata": {
+          "variable_name": "user.cart",
+          "inferred_type": "Cart",
+          "synthetic": true,
+          "file_path": "cart_service.py",
+          "file_name": "cart_service.py"
+        }
+      },
+      "cart": {
+        "type": "inferred_variable",
+        "metadata": {
+          "variable_name": "cart",
+          "inferred_type": "get_user_cart",
+          "synthetic": true,
+          "file_path": "cart_service.py",
+          "file_name": "cart_service.py",
+          "defined_in": [
+            "app.py"
+          ]
+        }
+      },
+      "total": {
+        "type": "inferred_variable",
+        "metadata": {
+          "variable_name": "total",
+          "inferred_type": "calculate_total",
+          "synthetic": true,
+          "file_path": "cart_service.py",
+          "file_name": "cart_service.py"
+        }
+      },
+      "import jwt": {
+        "type": "imports",
+        "metadata": {
+          "relationship_type": "imports",
+          "module": "import jwt",
+          "file_path": "auth.py",
+          "file_name": "auth.py"
+        }
+      },
+      "token": {
+        "type": "inferred_variable",
+        "metadata": {
+          "variable_name": "token",
+          "inferred_type": "encode",
+          "synthetic": true,
+          "file_path": "auth.py",
+          "file_name": "auth.py",
+          "defined_in": [
+            "app.py"
+          ]
+        }
+      },
+      "algorithms": {
+        "type": "inferred_variable",
+        "metadata": {
+          "variable_name": "algorithms",
+          "inferred_type": "secret,",
+          "synthetic": true,
+          "file_path": "auth.py",
+          "file_name": "auth.py"
+        }
+      },
+      "from cart_service import CartService": {
+        "type": "imports",
+        "metadata": {
+          "relationship_type": "imports",
+          "module": "from cart_service import CartService",
+          "file_path": "app.py",
+          "file_name": "app.py"
+        }
+      },
+      "from auth import AuthService": {
+        "type": "imports",
+        "metadata": {
+          "relationship_type": "imports",
+          "module": "from auth import AuthService",
+          "file_path": "app.py",
+          "file_name": "app.py"
+        }
+      },
+      "cart_service": {
+        "type": "inferred_variable",
+        "metadata": {
+          "variable_name": "cart_service",
+          "inferred_type": "CartService",
+          "synthetic": true,
+          "file_path": "app.py",
+          "file_name": "app.py"
+        }
+      },
+      "auth_service": {
+        "type": "inferred_variable",
+        "metadata": {
+          "variable_name": "auth_service",
+          "inferred_type": "AuthService",
+          "synthetic": true,
+          "file_path": "app.py",
+          "file_name": "app.py"
+        }
+      }
+    },
+    "edges": [
+      {
+        "source": "self",
+        "target": "self.user_id",
+        "relationship": "calls"
+      },
+      {
+        "source": "self",
+        "target": "self.email",
+        "relationship": "calls"
+      },
+      {
+        "source": "self",
+        "target": "self.cart",
+        "relationship": "calls"
+      },
+      {
+        "source": "self",
+        "target": "self.items",
+        "relationship": "calls"
+      },
+      {
+        "source": "self",
+        "target": "self.total",
+        "relationship": "calls"
+      },
+      {
+        "source": "self.items",
+        "target": "self.items.append",
+        "relationship": "calls"
+      },
+      {
+        "source": "item",
+        "target": "item.price",
+        "relationship": "calls"
+      },
+      {
+        "source": "i",
+        "target": "i.id",
+        "relationship": "calls"
+      },
+      {
+        "source": "self",
+        "target": "self.id",
+        "relationship": "calls"
+      },
+      {
+        "source": "self",
+        "target": "self.name",
+        "relationship": "calls"
+      },
+      {
+        "source": "self",
+        "target": "self.price",
+        "relationship": "calls"
+      },
+      {
+        "source": "self",
+        "target": "self.db",
+        "relationship": "calls"
+      },
+      {
+        "source": "self.db",
+        "target": "self.db.find_user",
+        "relationship": "calls"
+      },
+      {
+        "source": "user",
+        "target": "user.cart",
+        "relationship": "calls"
+      },
+      {
+        "source": "self.db",
+        "target": "self.db.find_product",
+        "relationship": "calls"
+      },
+      {
+        "source": "user.cart",
+        "target": "user.cart.add_item",
+        "relationship": "calls"
+      },
+      {
+        "source": "self",
+        "target": "self.get_user_cart",
+        "relationship": "calls"
+      },
+      {
+        "source": "cart",
+        "target": "cart.calculate_total",
+        "relationship": "calls"
+      },
+      {
+        "source": "self.db",
+        "target": "self.db.save_order",
+        "relationship": "calls"
+      },
+      {
+        "source": "repository",
+        "target": "import jwt",
+        "relationship": "imports"
+      },
+      {
+        "source": "self",
+        "target": "self.secret",
+        "relationship": "calls"
+      },
+      {
+        "source": "self",
+        "target": "self.encoder",
+        "relationship": "calls"
+      },
+      {
+        "source": "self.db",
+        "target": "self.db.find_by_email",
+        "relationship": "calls"
+      },
+      {
+        "source": "self.encoder",
+        "target": "self.encoder.encode",
+        "relationship": "calls"
+      },
+      {
+        "source": "user",
+        "target": "user.user_id",
+        "relationship": "calls"
+      },
+      {
+        "source": "jwt",
+        "target": "jwt.decode",
+        "relationship": "calls"
+      },
+      {
+        "source": "self.session_store",
+        "target": "self.session_store.remove",
+        "relationship": "calls"
+      },
+      {
+        "source": "self",
+        "target": "self.session_store",
+        "relationship": "calls"
+      },
+      {
+        "source": "repository",
+        "target": "from cart_service import CartService",
+        "relationship": "imports"
+      },
+      {
+        "source": "repository",
+        "target": "from auth import AuthService",
+        "relationship": "imports"
+      },
+      {
+        "source": "auth_service",
+        "target": "auth_service.verify_token",
+        "relationship": "calls"
+      },
+      {
+        "source": "cart_service",
+        "target": "cart_service.add_to_cart",
+        "relationship": "calls"
+      },
+      {
+        "source": "cart_service",
+        "target": "cart_service.checkout",
+        "relationship": "calls"
+      }
+    ],
+    "inferred_types": {
+      "cart_service": "CartService",
+      "auth_service": "AuthService",
+      "token": "verify_token",
+      "cart": "add_to_cart"
+    },
+    "symbol_table": {
+      "classes": {},
+      "functions": {},
+      "methods": {},
+      "imports": {
+        "from cart_service import CartService": {
+          "file_path": null,
+          "metadata": {
+            "relationship_type": "imports",
+            "module": "from cart_service import CartService",
+            "file_path": "app.py",
+            "file_name": "app.py"
+          }
+        },
+        "from auth import AuthService": {
+          "file_path": null,
+          "metadata": {
+            "relationship_type": "imports",
+            "module": "from auth import AuthService",
+            "file_path": "app.py",
+            "file_name": "app.py"
+          }
+        }
+      }
+    },
+    "resolved_symbols": [
+      {
+        "resolved": true,
+        "resolution_type": "semantic_graph_match",
+        "object": "auth_service",
+        "method": "auth_service.verify_token",
+        "confidence": 1
+      },
+      {
+        "resolved": true,
+        "resolution_type": "semantic_graph_match",
+        "object": "cart_service",
+        "method": "cart_service.add_to_cart",
+        "confidence": 1
+      },
+      {
+        "resolved": true,
+        "resolution_type": "semantic_graph_match",
+        "object": "cart_service",
+        "method": "cart_service.checkout",
+        "confidence": 1
+      }
+    ],
+    "compatibility_findings": [],
+    "symbolic_findings": []
+  },
+  "repo_name": "ecommerce-service",
+  "repo_path": "(inline)",
+  "repository_index": [
+    {
+      "file_name": "models.py",
+      "rel_path": "models.py",
+      "file_path": "models.py",
+      "language": "python",
+      "source_code": "class User:\n    def __init__(self, user_id, email):\n        self.user_id = user_id\n        self.email = email\n        self.cart = None\n\nclass Cart:\n    def __init__(self):\n        self.items = []\n        self.total = 0.0\n\n    def add_item(self, item):\n        self.items.append(item)\n        self.total += item.price\n\n    def remove_item(self, item_id):\n        self.items = [i for i in self.items if i.id != item_id]\n\nclass Product:\n    def __init__(self, product_id, name, price):\n        self.id = product_id\n        self.name = name\n        self.price = price\n"
+    },
+    {
+      "file_name": "cart_service.py",
+      "rel_path": "cart_service.py",
+      "file_path": "cart_service.py",
+      "language": "python",
+      "source_code": "from models import User, Cart, Product\n\nclass CartService:\n    def __init__(self):\n        self.db = None\n\n    def get_user_cart(self, user_id):\n        user = self.db.find_user(user_id)\n        return user.cart\n\n    def add_to_cart(self, user_id, product_id):\n        user = self.db.find_user(user_id)\n        product = self.db.find_product(product_id)\n        if user.cart is None:\n            user.cart = Cart()\n        user.cart.add_item(product)\n        return user.cart\n\n    def checkout(self, user_id):\n        cart = self.get_user_cart(user_id)\n        total = cart.calculate_total()\n        self.db.save_order(user_id, total)\n        user.cart = None\n        return total\n"
+    },
+    {
+      "file_name": "auth.py",
+      "rel_path": "auth.py",
+      "file_path": "auth.py",
+      "language": "python",
+      "source_code": "import jwt\n\nclass AuthService:\n    def __init__(self):\n        self.secret = None\n        self.encoder = None\n\n    def login(self, email, password):\n        user = self.db.find_by_email(email)\n        if not user:\n            raise ValueError('User not found')\n        token = self.encoder.encode({'user_id': user.user_id}, self.secret)\n        return token\n\n    def verify_token(self, token):\n        return jwt.decode(token, self.secret, algorithms=['HS256'])\n\n    def logout(self, user_id):\n        self.session_store.remove(user_id)\n"
+    },
+    {
+      "file_name": "app.py",
+      "rel_path": "app.py",
+      "file_path": "app.py",
+      "language": "python",
+      "source_code": "from cart_service import CartService\nfrom auth import AuthService\n\ncart_service = CartService()\nauth_service = AuthService()\n\ndef handle_add_to_cart(user_id, product_id):\n    token = auth_service.verify_token(user_id)\n    cart = cart_service.add_to_cart(user_id, product_id)\n    return cart\n\ndef handle_checkout(user_id):\n    cart_service.checkout(user_id)\n"
+    }
+  ]
+}
